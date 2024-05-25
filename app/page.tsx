@@ -1,6 +1,7 @@
+import ArticleItemList from "@/components/ArticleListItem"
 import { getCategorisedArticles } from "@/lib/articles"
 
-const HomePage = () => {
+function HomePage() {
   const articles = getCategorisedArticles()
 
   console.log(articles)
@@ -10,6 +11,12 @@ const HomePage = () => {
         <h1>minimal blog</h1>
       </header>
       <section className="md:grid md:grid-cols-2 flex flex-col gap-10"></section>
+      {articles !== null && Object.keys(articles).map((article) => (
+        <ArticleItemList
+          category={article}
+          articles={articles[article]}
+          key={article} />
+      ))}
     </section>
   )
 }
