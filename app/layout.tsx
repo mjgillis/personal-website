@@ -6,13 +6,13 @@ const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant-garamond",
   weight: ["400"],
-})
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: ["400", "600"],
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${cormorantGaramond.variable} ${poppins.variable} bg-neutral-100`}>{children}</body>
+      <body
+        className={`${cormorantGaramond.variable} ${poppins.variable} bg-neutral-100`}
+      >
+        {children}
+      </body>
     </html>
   );
 }
